@@ -109,6 +109,7 @@ class WeatherSearchFragment : Fragment() {
     }
 
     private fun requestPermission() {
+        // wrong method need to use activity register
         ActivityCompat.requestPermissions(
             this.requireActivity(),
             arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
