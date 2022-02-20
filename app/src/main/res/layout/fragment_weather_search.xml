@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".ui.search.WeatherSearchFragment">
+
+    <TextView
+        android:id="@+id/txCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/topGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/txObservationTime" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp"
+        android:hint="@string/type_city_name_or_current_location"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/ivSearch"
+        app:layout_constraintHorizontal_weight="8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etxCity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:shadowColor="@color/greySecondaryLight"
+            android:shadowDx="-1"
+            android:shadowDy="-1"
+            android:shadowRadius="1"
+            android:textColor="@color/black" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toBottomOf="@+id/tilCity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="2"
+        app:layout_constraintStart_toEndOf="@+id/tilCity"
+        app:layout_constraintTop_toTopOf="@+id/tilCity" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/verticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <ImageView
+        android:id="@+id/ivWeatherIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/txDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/topGuideline" />
+
+    <TextView
+        android:id="@+id/txTemperature"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/txFeelslike"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/topGuideline" />
+
+    <TextView
+        android:id="@+id/txFeelslike"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:padding="8dp"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/txWindSpeed"
+        app:layout_constraintEnd_toStartOf="@+id/verticalGuideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txTemperature" />
+
+    <TextView
+        android:id="@+id/txDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/ivWeatherIcon"
+        app:layout_constraintStart_toStartOf="@+id/ivWeatherIcon"
+        app:layout_constraintTop_toBottomOf="@+id/ivWeatherIcon" />
+
+    <TextView
+        android:id="@+id/txWindSpeed"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txWindDirection"
+        app:layout_constraintEnd_toEndOf="@+id/txFeelslike"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txFeelslike" />
+
+    <TextView
+        android:id="@+id/txWindDirection"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:gravity="center"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/mostBottomGuideline"
+        app:layout_constraintEnd_toEndOf="@+id/txWindSpeed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txWindSpeed" />
+
+    <TextView
+        android:id="@+id/txObservationTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:shadowColor="@color/greySecondaryLight"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="1"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilCity" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mostBottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/mostBottomGuideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilCity" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

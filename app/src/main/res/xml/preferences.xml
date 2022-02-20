@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+      <PreferenceCategory
+          android:title="Units">
+          <ListPreference
+              android:key="unit_system"
+              android:title="Choose unit system"
+              android:entries="@array/UnitEntries"
+              android:entryValues="@array/UnitValues"
+              android:summary="%s"
+              android:defaultValue="METRIC"
+              />
+      </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Language">
+        <ListPreference
+            android:key="chosen_language"
+            android:title="Choose app language"
+            android:entries="@array/LanguageEntries"
+            android:entryValues="@array/LanguageValues"
+            android:summary="%s"
+            android:defaultValue="ENGLISH"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="help_category"
+        android:title="Help">
+
+        <Preference
+            android:key="feedback"
+            android:summary="Report technical issues or suggest new features"
+            android:title="Send feedback"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

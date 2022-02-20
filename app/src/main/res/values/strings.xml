@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="history">History</string>
+    <string name="deleteAll">Delete History</string>
+    <string name="delete_the_chosen_history">Delete the chosen history</string>
+    <string name="settings">Settings</string>
+    <string name="scientific">Scientific</string>
+    <string name="imperial">Imperial</string>
+    <string name="metric">Metric</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="type_city_name_or_current_location">Type City Name or \'Current Location\'</string>
+</resources>

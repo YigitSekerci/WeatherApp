@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="UnitValues">
+        <item>METRIC</item>
+        <item>IMPERIAL</item>
+        <item>SCIENTIFIC</item>
+    </string-array>
+
+    <string-array name="UnitEntries">
+        <item>Metric</item>
+        <item>Imperial</item>
+        <item>Scientific</item>
+    </string-array>
+
+    <string-array name="LanguageValues">
+        <item>ENGLISH</item>
+        <item>TURKISH</item>
+        <item>RUSSIAN</item>
+        <item>ITALIAN</item>
+    </string-array>
+
+    <string-array name="LanguageEntries">
+        <item>English</item>
+        <item>Turkish</item>
+        <item>Russian</item>
+        <item>Italian</item>
+    </string-array>
+</resources>

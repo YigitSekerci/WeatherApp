@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_background"
+    android:padding="16dp"
+    android:layout_margin="4dp">
+
+    <TextView
+        android:id="@+id/historyCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:ellipsize="middle"
+        android:maxLines="2"
+        android:text="City"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/historyObservedTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Observed Temperature"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/historyObservedWindSpeed"
+        app:layout_constraintEnd_toStartOf="@+id/btDeleteHistory"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/historyObservationTime" />
+
+    <TextView
+        android:id="@+id/historyObservationTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Observation Time"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/historyObservedTemperature"
+        app:layout_constraintEnd_toEndOf="@+id/historyObservedTemperature"
+        app:layout_constraintStart_toStartOf="@+id/historyObservedTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/historyObservedWindSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Observed Wind Speed"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/historyObservedTemperature"
+        app:layout_constraintStart_toStartOf="@+id/historyObservedTemperature"
+        app:layout_constraintTop_toBottomOf="@+id/historyObservedTemperature" />
+
+    <ImageView
+        android:id="@+id/btDeleteHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/delete_the_chosen_history"
+        android:focusable="true"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
