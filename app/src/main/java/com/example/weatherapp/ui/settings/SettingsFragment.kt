@@ -6,6 +6,8 @@ import androidx.preference.PreferenceFragmentCompat
 import com.example.weatherapp.R
 import dagger.hilt.android.AndroidEntryPoint
 
+const val SETTINGS_TITLE:String = "Settings"
+
 @AndroidEntryPoint
 class SettingsFragment : PreferenceFragmentCompat() {
 
@@ -15,6 +17,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        (activity as? AppCompatActivity)?.supportActionBar?.title = "Settings"
+        (activity as? AppCompatActivity)?.supportActionBar?.title = SETTINGS_TITLE
     }
 }

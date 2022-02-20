@@ -14,6 +14,8 @@ import com.example.weatherapp.databinding.FragmentWeatherHistoryBinding
 import com.example.weatherapp.util.makeToast
 import dagger.hilt.android.AndroidEntryPoint
 
+const val HISTORY_FRAGMENT_TITLE:String = "History"
+
 @AndroidEntryPoint
 class WeatherHistoryFragment : Fragment(),DeleteListener {
 
@@ -27,7 +29,7 @@ class WeatherHistoryFragment : Fragment(),DeleteListener {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentWeatherHistoryBinding.inflate(inflater, container, false)
-        (activity as? AppCompatActivity)?.supportActionBar?.title = "History"
+        (activity as? AppCompatActivity)?.supportActionBar?.title = HISTORY_FRAGMENT_TITLE
         return binding.root
     }
 
@@ -70,7 +72,7 @@ class WeatherHistoryFragment : Fragment(),DeleteListener {
     }
 
     private fun setupRecyclerView(){
-        weatherHistoryAdapter = WeatherHistoryAdapter(this)
+        weatherHistoryAdapter = WeatherHistoryAdapter(this,requireContext())
         binding.rwHistory.apply {
             adapter = weatherHistoryAdapter
             layoutManager = LinearLayoutManager(activity)

@@ -17,6 +17,8 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+const val CURRENT_LOCATION = "Current Location"
+
 @HiltViewModel
 class WeatherSearchViewModel @Inject constructor(
     private val repository: WeatherInfoRepository,
@@ -43,7 +45,7 @@ class WeatherSearchViewModel @Inject constructor(
     }
 
     fun needCurrentLocation(location: String): Boolean {
-        return location == "Current Location"
+        return location == CURRENT_LOCATION
     }
 
 

@@ -1,7 +1,6 @@
 package com.example.weatherapp.ui.search
 
 import android.Manifest
-import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,6 +21,11 @@ import com.example.weatherapp.util.speedAbbreviation
 import com.example.weatherapp.util.temperatureAbbreviation
 import dagger.hilt.android.AndroidEntryPoint
 
+
+const val NO_PERMISSION:String = "In order to make current location query please accept location permission."
+const val NO_LOCATION_SERVICE:String = "Location service is closed. Please open your GPS or INTERNET services."
+const val WEATHER_SEARCH_FRAGMENT_TITLE:String = "Weather Search"
+
 @AndroidEntryPoint
 class WeatherSearchFragment : Fragment() {
     private val viewModel: WeatherSearchViewModel by activityViewModels()
@@ -33,7 +37,7 @@ class WeatherSearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentWeatherSearchBinding.inflate(inflater, container, false)
-        (activity as? AppCompatActivity)?.supportActionBar?.title = "Weather Search"
+        (activity as? AppCompatActivity)?.supportActionBar?.title = WEATHER_SEARCH_FRAGMENT_TITLE
         return binding.root
     }
 
@@ -79,7 +83,7 @@ class WeatherSearchFragment : Fragment() {
         if (hasLocationPermission()) {
             tryToSearchCurrent()
         }else{
-            makeExceptionDialogue("In order to make current location query please accept location permission.")
+            makeExceptionDialogue(NO_PERMISSION)
         }
     }
 
@@ -87,7 +91,7 @@ class WeatherSearchFragment : Fragment() {
         try {
             viewModel.searchCurrentLocation()
         } catch (e: LocationServiceIsClosedException) {
-            makeExceptionDialogue("Location service is closed. Please open your GPS or INTERNET services.")
+            makeExceptionDialogue(NO_LOCATION_SERVICE)
         }
     }
 
@@ -117,7 +121,6 @@ class WeatherSearchFragment : Fragment() {
         )
     }
 
-    @SuppressLint("SetTextI18n")
     private fun bindViews(weatherInfo: WeatherInfo) {
         binding.apply {
             progressBar.visibility = View.GONE
@@ -127,7 +130,7 @@ class WeatherSearchFragment : Fragment() {
             }
 
             txObservationTime.apply {
-                text = "Observation Time: ${weatherInfo.current.observation_time}"
+                text = getString(R.string.observation,weatherInfo.current.observation_time)
             }
 
             txDescription.apply {
@@ -135,23 +138,19 @@ class WeatherSearchFragment : Fragment() {
             }
 
             txFeelslike.apply {
-                text =
-                    "Feelslike\n${weatherInfo.current.feelslike} ${temperatureAbbreviation(viewModel.currentUnit)}"
+                text =getString(R.string.feelslike,weatherInfo.current.feelslike,temperatureAbbreviation(viewModel.currentUnit))
             }
 
             txTemperature.apply {
-                text = "Temperature\n${weatherInfo.current.temperature} ${
-                    temperatureAbbreviation(viewModel.currentUnit)
-                }"
+                text =getString(R.string.feelslike,weatherInfo.current.temperature,temperatureAbbreviation(viewModel.currentUnit))
             }
 
             txWindDirection.apply {
-                text = "Wind Direction\n${weatherInfo.current.wind_dir}"
+                text = getString(R.string.windDir,weatherInfo.current.wind_dir)
             }
 
             txWindSpeed.apply {
-                text =
-                    "Wind Speed\n${weatherInfo.current.wind_speed} ${speedAbbreviation(viewModel.currentUnit)}"
+                text = getString(R.string.windSpeed,weatherInfo.current.wind_speed,speedAbbreviation(viewModel.currentUnit))
             }
 
             Glide.with(this@WeatherSearchFragment)

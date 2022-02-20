@@ -9,4 +9,11 @@
     <string name="metric">Metric</string>
     <string name="placeholder">Placeholder</string>
     <string name="type_city_name_or_current_location">Type City Name or \'Current Location\'</string>
+    <string name="observation">Observation Time: %1$s</string>
+    <string name="feelslike">Feelslike\n%1$.1f %2$s</string>
+    <string name="temperature">Temperature\n%1$.1f %2$s</string>
+    <string name="temperatureAdapter">Temperature: %1$.1f %2$s</string>
+    <string name="windDir">Wind Direction\n%1$s</string>
+    <string name="windSpeed">Wind Speed\n%1$.1f %2$s</string>
+    <string name="windSpeedAdapter">Wind Speed: %1$.1f %2$s</string>
 </resources>
